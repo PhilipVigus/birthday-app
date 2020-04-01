@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class BirthdayChecker < Sinatra::Base
   get '/' do
-    'App working'  
+    erb(:index)
   end
 
   # start the server if ruby file executed directly
