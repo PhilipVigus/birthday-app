@@ -2,6 +2,7 @@ feature 'displays the form for the user to enter their birthday into' do
   before do
     visit('/')
   end
+
   scenario 'homepage has correct message on it' do
     expect(page).to have_content('Hello there!')
   end
@@ -20,5 +21,10 @@ feature 'displays the form for the user to enter their birthday into' do
 
   scenario 'homepage has a go button' do
     expect(page).to have_button('Go!')
+  end
+
+  scenario 'clicking the Go! button takes you to the /birtday-checker page' do
+    click_button('Go!')
+    expect(page).to have_current_path('/check-birthday')
   end
 end
